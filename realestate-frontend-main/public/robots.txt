@@ -1,0 +1,51 @@
+# RealEstateAL - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /profile
+Disallow: /favorites
+Disallow: /consent-management
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow important pages for SEO
+Allow: /listings
+Allow: /listing/*
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+
+# Sitemap location
+Sitemap: https://realestateal.al/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Special rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /profile
+Disallow: /favorites
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /profile
+Disallow: /favorites
+
+User-agent: Slurp
+Allow: /
+Disallow: /admin/
+Disallow: /profile
+Disallow: /favorites
+
+# Block resource-intensive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

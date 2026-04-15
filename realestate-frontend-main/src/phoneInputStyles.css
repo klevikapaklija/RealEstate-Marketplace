@@ -1,0 +1,75 @@
+/* Custom styling for PhoneInput to match website theme */
+.phone-input-custom .PhoneInputInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.phone-input-custom .PhoneInputInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Remove all borders and backgrounds from country flag area */
+.phone-input-custom .PhoneInputCountry {
+  margin-right: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.phone-input-custom .PhoneInputCountry:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.phone-input-custom .PhoneInputCountry:focus {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.phone-input-custom .PhoneInputCountrySelect {
+  font-size: 1rem;
+  cursor: pointer;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.phone-input-custom .PhoneInputCountrySelect:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.phone-input-custom .PhoneInputCountrySelectArrow {
+  color: #6b7280;
+  margin-left: 0.25rem;
+  opacity: 0.7;
+  border: none !important;
+}
+
+.phone-input-custom .PhoneInputCountryIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Error state styling */
+.phone-input-custom.error .PhoneInputInput {
+  border-color: #ef4444;
+}
+
+.phone-input-custom.error .PhoneInputInput:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}

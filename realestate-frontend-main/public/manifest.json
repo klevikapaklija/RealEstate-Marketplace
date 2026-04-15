@@ -1,0 +1,41 @@
+{
+  "short_name": "RealEstateAL",
+  "name": "RealEstateAL - Gjej Pronën Tënde të Ëndrrave në Shqipëri",
+  "description": "Zbulo prona premium në Shqipëri. Bli, merr me qira ose listo apartamente, shtëpi dhe vila. Lidhu me agjentë të verifikuar.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["business", "lifestyle", "real estate"],
+  "lang": "sq",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

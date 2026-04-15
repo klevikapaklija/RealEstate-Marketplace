@@ -1,0 +1,28 @@
+
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background (same as favicon) -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Full gradient background -->
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  
+  <!-- House icon (exact same path as favicon, scaled and centered) -->
+  <g transform="translate(450, 180) scale(3)">
+    <path d="M 20 50 L 50 25 L 80 50 M 27 50 L 27 75 L 40 75 L 40 75 M 60 75 L 73 75 L 73 50 M 40 75 L 40 60 L 60 60 L 60 75 L 40 75 Z" 
+          stroke="white" 
+          stroke-width="4" 
+          fill="none" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Text: RealEstateAL -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">
+    RealEstateAL
+  </text>
+</svg>

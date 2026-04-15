@@ -1,0 +1,529 @@
+/* Google Fonts - Modern Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Variables - Apple Minimalist Palette */
+:root {
+  --color-primary: #1d1d1f;
+  /* Apple Heading */
+  --color-secondary: #86868b;
+  /* Apple Subtext */
+  --color-accent: #0071e3;
+  /* Apple Blue */
+  --color-background: #f5f5f7;
+  /* Apple Grey Background */
+  --color-surface: #ffffff;
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply font-sans text-primary-700 antialiased bg-primary-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+    /* Tighter tracking for SF Pro feel */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-primary-900 tracking-tight;
+  }
+
+  /* Smooth Scroll */
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Focus States */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+
+  /* Apple Glassmorphism */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-glass;
+  }
+
+  .glass-dark {
+    @apply bg-black/70 backdrop-blur-xl border border-white/10 shadow-glass;
+  }
+
+  /* Gradient Text - Subtle & Premium */
+  .gradient-text-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-900 to-primary-600;
+  }
+
+  .gradient-text-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-500 to-accent-400;
+  }
+
+  /* Hover Lift Effect - Subtle */
+  .hover-lift {
+    @apply transition-all duration-500 hover:-translate-y-1 hover:shadow-medium;
+  }
+
+  /* Container Utilities */
+  .container-apple {
+    @apply max-w-[980px] mx-auto px-5 md:px-6;
+  }
+}
+
+
+/* Cookie Banner Animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+/* Error Banner Animation */
+@keyframes slide-down {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out;
+}
+
+/* Modal Bounce-In Animation */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Property Card Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.property-card-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.property-card {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Custom marker styling - Smaller blue dot pin without pulsing */
+.custom-marker-wrapper {
+  will-change: transform;
+  transition: none;
+  /* Disable transition on transform */
+}
+
+.custom-marker-wrapper:hover {
+  transform: none;
+  z-index: 999;
+}
+
+.marker-pin {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-out;
+  transform-origin: center bottom;
+}
+
+/* Boosted listings get bigger gold pins */
+.marker-pin.boosted {
+  width: 26px;
+  height: 26px;
+}
+
+.marker-dot {
+  width: 12px;
+  height: 12px;
+  background: #14b8a6;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(20, 184, 166, 0.4);
+  transition: all 0.2s ease-out;
+}
+
+/* Boosted listings get coral color */
+.marker-dot.boosted {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  border: 3px solid white;
+  box-shadow: 0 3px 10px rgba(251, 146, 60, 0.6), 0 0 0 2px rgba(251, 146, 60, 0.2);
+}
+
+/* Mapbox popup styling */
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  max-width: 260px;
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 20px;
+  padding: 6px;
+  color: #666;
+  width: 28px;
+  height: 28px;
+  right: 6px;
+  top: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: white !important;
+}
+
+/* Listing popup styles */
+.listing-popup {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.popup-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.popup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.popup-image:hover {
+  transform: scale(1.05);
+}
+
+.popup-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.badge-featured {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.badge-premium {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+.badge-boosted {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.popup-content {
+  padding: 12px;
+}
+
+.popup-title {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.popup-price {
+  margin: 0 0 10px 0;
+  color: #14b8a6;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.popup-details {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.detail-icon {
+  width: 14px;
+  height: 14px;
+  color: #6b7280;
+}
+
+.popup-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 12px 0;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.location-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.popup-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+.popup-button:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  box-shadow: 0 4px 8px rgba(20, 184, 166, 0.3);
+  transform: translateY(-1px);
+}
+
+.button-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+/* Custom Scrollbar for Listings */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #14b8a6 0%, #6366f1 100%);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0f766e 0%, #4f46e5 100%);
+}
+
+/* About page animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Float with Rotation */
+@keyframes float-rotate {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float-rotate {
+  animation: float-rotate 6s ease-in-out infinite;
+}
+
+/* House Drawing Animation */
+@keyframes draw-stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-stroke 2.5s ease-out forwards;
+}
+
+/* Pin Drop Animation */
+@keyframes pin-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pin-drop {
+  opacity: 0;
+  animation: pin-drop 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2s forwards;
+}
+
+/* Door Slide Animation */
+@keyframes door-slide {
+  to {
+    transform: scaleX(0.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-door-slide {
+  transform-origin: left;
+  animation: door-slide 1.5s ease-in-out 3s forwards;
+}
+
+/* Slide Roll Animation for Search Bar */
+@keyframes slide-roll {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scaleX(0.3) scaleY(0.5) rotate(-15deg);
+    filter: blur(4px);
+  }
+
+  30% {
+    opacity: 0.6;
+    transform: translateX(-30px) scaleX(0.6) scaleY(0.8) rotate(-8deg);
+    filter: blur(2px);
+  }
+
+  60% {
+    opacity: 0.9;
+    transform: translateX(10px) scaleX(1.05) scaleY(1.02) rotate(2deg);
+    filter: blur(0px);
+  }
+
+  80% {
+    transform: translateX(-5px) scaleX(0.98) scaleY(1) rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1) scaleY(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+.animate-slide-roll {
+  animation: slide-roll 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s backwards;
+  transform-origin: left center;
+}

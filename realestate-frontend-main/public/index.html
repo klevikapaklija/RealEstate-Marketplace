@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q34212TQ1P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Google Consent Mode v2 - Set default consent state BEFORE gtag initialization
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted', // Necessary cookies
+        'personalization_storage': 'denied',
+        'security_storage': 'granted', // Necessary for security
+        'wait_for_update': 500 // Wait 500ms for consent update
+      });
+
+      gtag('js', new Date());
+
+      // Check existing consent and update if available
+      const checkAndUpdateConsent = () => {
+        try {
+          const consent = localStorage.getItem('cookieConsent');
+          if (consent) {
+            const consentData = JSON.parse(consent);
+            
+            // Update consent based on user preferences
+            gtag('consent', 'update', {
+              'analytics_storage': consentData.analytics ? 'granted' : 'denied'
+            });
+            
+            // Initialize GA4 after consent update
+            if (consentData.analytics) {
+              gtag('config', 'G-Q34212TQ1P', {
+                'anonymize_ip': true,
+                'send_page_view': true,
+                'cookie_flags': 'SameSite=None;Secure'
+              });
+            }
+            
+            return consentData.analytics;
+          }
+          return false;
+        } catch (e) {
+          console.error('Error checking consent:', e);
+          return false;
+        }
+      };
+
+      // Check consent on page load
+      checkAndUpdateConsent();
+
+      // Listen for consent changes from cookie banner
+      window.addEventListener('cookieConsentUpdated', function(e) {
+        if (e.detail) {
+          gtag('consent', 'update', {
+            'analytics_storage': e.detail.analytics ? 'granted' : 'denied'
+          });
+          
+          // Initialize GA4 if consent granted
+          if (e.detail.analytics) {
+            gtag('config', 'G-Q34212TQ1P', {
+              'anonymize_ip': true,
+              'send_page_view': true,
+              'cookie_flags': 'SameSite=None;Secure'
+            });
+          }
+        }
+      });
+    </script>
+    
+    <meta charset="utf-8" />
+    
+    <!-- Favicon - ICO first for Google Search compatibility -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/favicon-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Google Site Verification - Add your verification code from Google Search Console -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
+    
+    <!-- Primary Meta Tags - English -->
+    <title>RealEstateAL - Gjej Prona Premium për Shitje & Qira në Shqipëri | Platforma e Besueshme e Pasurive të Paluajtshme</title>
+    <meta name="title" content="RealEstateAL - Gjej Prona Premium për Shitje & Qira në Shqipëri" />
+    <meta name="description" content="Zbulo prona premium në Shqipëri. Bli, merr me qira ose listo apartamente, shtëpi, vila dhe prona komerciale në Tiranë, Durrës, Vlorë. Lidhu me agjentë të verifikuar. Lista falas!" />
+    <meta name="keywords" content="prona Shqipëri, apartamente Tiranë, shtëpi për shitje, apartamente për qira, vila Shqipëri, agjentë pasurive, bli pronë Shqipëri, qira apartament Tiranë, prona komerciale, tokë për shitje, Durrës prona, Vlorë pasuri, tregu i pasurive Shqipëri, real estate Albania, property for sale, apartments Tirana, houses for rent" />
+    <meta name="author" content="RealEstateAL" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Albanian, English" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="RealEstateAL" />
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="AL" />
+    <meta name="geo.placename" content="Albania" />
+    <meta name="geo.position" content="41.3275;19.8187" />
+    <meta name="ICBM" content="41.3275, 19.8187" />
+    
+    <!-- Google Site Verification (add your verification code when available) -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+    
+    <!-- Alternate Language Tags -->
+    <link rel="alternate" hreflang="sq" href="https://realestateal.al/" />
+    <link rel="alternate" hreflang="en" href="https://realestateal.al/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://realestateal.al/" />
+    
+    <!-- Open Graph / Facebook - Albanian Content -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://realestateal.al/" />
+    <meta property="og:title" content="RealEstateAL - Gjej Pronën Tënde të Ëndrrave në Shqipëri" />
+    <meta property="og:description" content="Zbulo prona premium, lidhu me agjentë të besueshëm dhe gjej vendin perfekt për të quajtur shtëpi në Shqipëri. Bli, merr me qira ose listo prona falas!" />
+    <meta property="og:image" content="https://realestateal.al/og-image.png" />
+    <meta property="og:image:secure_url" content="https://realestateal.al/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="RealEstateAL - Platforma e Pasurive të Paluajtshme në Shqipëri" />
+    <meta property="og:locale" content="sq_AL" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="RealEstateAL" />
+    
+    <!-- Twitter - Albanian Content -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://realestateal.al/" />
+    <meta property="twitter:title" content="RealEstateAL - Prona Premium në Shqipëri" />
+    <meta property="twitter:description" content="Gjej apartamente, shtëpi, vila dhe prona komerciale në Shqipëri. Lidhu me agjentë të verifikuar. Lista falas!" />
+    <meta property="twitter:image" content="https://realestateal.al/og-image.png" />
+    <meta property="twitter:image:alt" content="RealEstateAL Logo" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://realestateal.al/" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "RealEstateAL",
+      "alternateName": "Pasuri të Paluajtshme Shqipëri",
+      "description": "Platforma e besuar e pasurive të paluajtshme në Shqipëri që lidh blerësit, shitësit dhe qiramarrësit me prona premium",
+      "url": "https://realestateal.al",
+      "logo": "https://realestateal.al/favicon-512x512.png",
+      "image": "https://realestateal.al/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AL",
+        "addressLocality": "Tiranë",
+        "addressRegion": "Tiranë"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.3275",
+        "longitude": "19.8187"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Tiranë"},
+        {"@type": "City", "name": "Durrës"},
+        {"@type": "City", "name": "Vlorë"},
+        {"@type": "City", "name": "Shkodër"},
+        {"@type": "City", "name": "Elbasan"},
+        {"@type": "City", "name": "Fier"},
+        {"@type": "City", "name": "Korçë"},
+        {"@type": "City", "name": "Sarandë"},
+        {"@type": "Country", "name": "Albania", "alternateName": "Shqipëri"}
+      ],
+      "priceRange": "$$",
+      "openingHours": "Mo-Su",
+      "sameAs": [
+        "https://realestateal.al"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "RealEstateAL",
+      "url": "https://realestateal.al",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://realestateal.al/listings?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": ["en", "sq"]
+    }
+    </script>
+    
+    <title>RealEstateAL - Gjej Prona Premium për Shitje & Qira në Shqipëri | Platforma e Besueshme e Pasurive të Paluajtshme</title>
+    
+    <!-- PayPal SDK will be loaded dynamically from the app -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
